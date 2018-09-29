@@ -7,7 +7,7 @@ namespace DiscountMailer
 {
     class CSVFile
     {
-        public static void ReadCSV()
+        public static void ReadCSV(String FilePath)
         {
             using (var reader = new StreamReader(@"C:\Users\garu\Desktop\test.csv"))
             {

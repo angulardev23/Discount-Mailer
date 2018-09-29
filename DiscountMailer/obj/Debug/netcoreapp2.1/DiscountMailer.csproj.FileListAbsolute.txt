@@ -9,3 +9,14 @@ c:\users\garu\source\repos\DiscountMailer\DiscountMailer\obj\Debug\netcoreapp2.1
 c:\users\garu\source\repos\DiscountMailer\DiscountMailer\obj\Debug\netcoreapp2.1\DiscountMailer.AssemblyInfo.cs
 c:\users\garu\source\repos\DiscountMailer\DiscountMailer\obj\Debug\netcoreapp2.1\DiscountMailer.dll
 c:\users\garu\source\repos\DiscountMailer\DiscountMailer\obj\Debug\netcoreapp2.1\DiscountMailer.pdb
+C:\Users\garu\Desktop\mailer repo\Discount-Mailer\DiscountMailer\bin\Debug\netcoreapp2.1\DiscountMailer.deps.json
+C:\Users\garu\Desktop\mailer repo\Discount-Mailer\DiscountMailer\bin\Debug\netcoreapp2.1\DiscountMailer.runtimeconfig.json
+C:\Users\garu\Desktop\mailer repo\Discount-Mailer\DiscountMailer\bin\Debug\netcoreapp2.1\DiscountMailer.runtimeconfig.dev.json
+C:\Users\garu\Desktop\mailer repo\Discount-Mailer\DiscountMailer\bin\Debug\netcoreapp2.1\DiscountMailer.dll
+C:\Users\garu\Desktop\mailer repo\Discount-Mailer\DiscountMailer\bin\Debug\netcoreapp2.1\DiscountMailer.pdb
+C:\Users\garu\Desktop\mailer repo\Discount-Mailer\DiscountMailer\obj\Debug\netcoreapp2.1\DiscountMailer.csprojAssemblyReference.cache
+C:\Users\garu\Desktop\mailer repo\Discount-Mailer\DiscountMailer\obj\Debug\netcoreapp2.1\DiscountMailer.csproj.CoreCompileInputs.cache
+C:\Users\garu\Desktop\mailer repo\Discount-Mailer\DiscountMailer\obj\Debug\netcoreapp2.1\DiscountMailer.AssemblyInfoInputs.cache
+C:\Users\garu\Desktop\mailer repo\Discount-Mailer\DiscountMailer\obj\Debug\netcoreapp2.1\DiscountMailer.AssemblyInfo.cs
+C:\Users\garu\Desktop\mailer repo\Discount-Mailer\DiscountMailer\obj\Debug\netcoreapp2.1\DiscountMailer.dll
+C:\Users\garu\Desktop\mailer repo\Discount-Mailer\DiscountMailer\obj\Debug\netcoreapp2.1\DiscountMailer.pdb

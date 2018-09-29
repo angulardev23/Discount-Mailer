@@ -41,7 +41,7 @@ namespace DiscountMailer
                 result = SettingsJson.ToString();
                 Console.WriteLine(result);
             }
-            File.WriteAllText(SettingsFilePath, result);
+            //File.WriteAllText(SettingsFilePath, result);
         }
 
 
