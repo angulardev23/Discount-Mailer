@@ -687,11 +687,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\garu\\Desktop\\mailer repo\\Discount-Mailer\\Email\\Email.csproj",
+      "projectUniqueName": "C:\\Users\\garu\\Documents\\ZTP\\mailer repo\\Discount-Mailer\\Email\\Email.csproj",
       "projectName": "Email",
-      "projectPath": "C:\\Users\\garu\\Desktop\\mailer repo\\Discount-Mailer\\Email\\Email.csproj",
+      "projectPath": "C:\\Users\\garu\\Documents\\ZTP\\mailer repo\\Discount-Mailer\\Email\\Email.csproj",
       "packagesPath": "C:\\Users\\garu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\garu\\Desktop\\mailer repo\\Discount-Mailer\\Email\\obj\\",
+      "outputPath": "C:\\Users\\garu\\Documents\\ZTP\\mailer repo\\Discount-Mailer\\Email\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
