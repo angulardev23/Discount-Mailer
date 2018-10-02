@@ -20,7 +20,6 @@ namespace DiscountMailer
 
                     Console.WriteLine(values[0]);
                     listA.Add(values[0]);
-                    //listB.Add(values[1]);
                 }
             }
         }
