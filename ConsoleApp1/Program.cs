@@ -1,13 +1,12 @@
 ﻿using System;
 
-namespace Startup
+namespace ConsoleApp1
 {
     class Program
     {
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            Settings settings= new Settings();
         }
     }
 }
