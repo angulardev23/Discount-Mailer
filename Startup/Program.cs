@@ -7,7 +7,7 @@ namespace Startup
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            Settings settings= new Settings();
+            Settings settings = new Settings();
         }
     }
 }
