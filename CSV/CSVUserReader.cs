@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace CSV
+namespace DiscountMailer
 {
     public class CSVUserReader
     {
-        public void ReadCSV(String FilePath)
+        public static void ReadCSV(String FilePath)
         {
             TextReader textReader = File.OpenText(FilePath);
             var csv = new CsvReader(textReader);
