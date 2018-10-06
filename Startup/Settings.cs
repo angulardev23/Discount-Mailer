@@ -12,7 +12,7 @@ namespace Startup
 {
     class Settings
     {
-        String CSVFile;
+        public String CSVFile { get; set; }
         public IConfiguration Configuration { get; set; }
 
         public Settings()
