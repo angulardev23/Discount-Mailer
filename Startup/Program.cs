@@ -1,7 +1,9 @@
-﻿using DiscountMailer;
+﻿using CSV;
+using DiscountMailer;
+using Startup;
 using System;
 
-namespace Startup
+namespace DiscountMailer
 {
     class Program
     {

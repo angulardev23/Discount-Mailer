@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CSV\CSV.csproj" />
     <ProjectReference Include="..\Email\Email.csproj" />
   </ItemGroup>
 

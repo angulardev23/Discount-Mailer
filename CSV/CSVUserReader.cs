@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace DiscountMailer
+namespace CSV
 {
     public class CSVUserReader
     {
