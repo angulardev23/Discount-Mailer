@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmailRecipient", "Email\EmailRecipient.csproj", "{095E482E-BB4C-4C4A-AB8F-29A4979A3FB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Email", "Email\Email.csproj", "{095E482E-BB4C-4C4A-AB8F-29A4979A3FB0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Startup", "Startup\Startup.csproj", "{AD361837-814A-46ED-8612-C89F45B3AF2C}"
 EndProject
