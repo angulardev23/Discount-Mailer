@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using DiscountMailer;
 
 namespace Email
 {
     class Program
     {
-        static void Main(string[] args)
+        static async System.Threading.Tasks.Task Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            EmailSender wyslijWiadomosc = new EmailSender();
+            await wyslijWiadomosc.SendEmail();
         }
     }
 }
