@@ -14,7 +14,7 @@ namespace DiscountMailer
             CSVUserReader.ReadCSV(settings.CSVFile);
             //start sending
             EmailSender emailSender = new EmailSender();
-            emailSender.Sending();
+            emailSender.isItSended();
         }
     }
 }
