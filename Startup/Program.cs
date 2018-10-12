@@ -1,5 +1,6 @@
 ﻿using CSV;
 using DiscountMailer;
+using Email;
 using Startup;
 using System;
 
@@ -12,9 +13,17 @@ namespace DiscountMailer
             Settings settings = new Settings();
             //read CSV file
             CSVUserReader.ReadCSV(settings.CSVFile);
-            //start sending
+            //create body
+            EmailRecipient recipient = new EmailRecipient("klocu321@interia.pl", "Marcin", "Kloc", DateTime.Today);
+            string Email = recipient.EmailAddress;
+            string Name = recipient.Name;
+            string Surname = recipient.Surname;
+            DateTime EndDate = recipient.EndDateTime;
+            BodyBuilder makeBody = new BodyBuilder();
+            string Body = makeBody.text(Name, Surname, EndDate);
+            //send an email
             EmailSender emailSender = new EmailSender();
-            emailSender.isItSended();
+            emailSender.isItSended(Email, "Promocja", Body);
         }
     }
 }
