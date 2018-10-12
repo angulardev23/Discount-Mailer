@@ -7,10 +7,10 @@ namespace Email
 {
     class Program
     {
-        static async System.Threading.Tasks.Task Main(string[] args)
+        static void Main(string[] args)
         {
-            EmailSender wyslijWiadomosc = new EmailSender();
-            await wyslijWiadomosc.SendEmail();
+            EmailSender emailSender = new EmailSender();
+            emailSender.isItSended();
         }
     }
 }
