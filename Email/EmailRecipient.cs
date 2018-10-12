@@ -11,7 +11,7 @@ namespace Email
         public string Surname { get; set; }
         public DateTime EndDateTime { get; set; }
 
-        EmailRecipient(string emailAddress, string name, string surname, DateTime endDateTime)
+        public EmailRecipient(string emailAddress, string name, string surname, DateTime endDateTime)
         {
             EmailAddress = emailAddress;
             Name = name;

@@ -1,4 +1,5 @@
-﻿using FluentEmail.Core;
+﻿using Email;
+using FluentEmail.Core;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -12,7 +13,6 @@ namespace DiscountMailer
 {
     public class EmailSender
     {
-      
         public bool SendEmail(string toEmail, string subject, string body)
         {
             try
@@ -41,6 +41,14 @@ namespace DiscountMailer
             bool result = false;
 
             result = SendEmail("klocu321@interia.pl", "Powitanie", "Czesc sprawdzam poprawnosc wysylania eMaili");
+            Console.WriteLine(result);
+        }
+
+        public void isItSended(string toEmail, string subject, string body)
+        {
+            bool result = false;
+
+            result = SendEmail(toEmail, subject, body);
             Console.WriteLine(result);
         }
 
