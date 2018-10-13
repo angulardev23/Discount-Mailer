@@ -1,8 +1,7 @@
 ﻿using CsvHelper;
+using Email;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
 
 namespace CSV
 {
@@ -12,7 +11,7 @@ namespace CSV
         {
             TextReader textReader = File.OpenText(FilePath);
             var csv = new CsvReader(textReader);
-            var records = csv.GetRecords<dynamic>();
+            var records = csv.GetRecords<EmailRecipient>();
         }
 
 

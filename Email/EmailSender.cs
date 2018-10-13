@@ -1,15 +1,9 @@
-﻿using Email;
-using FluentEmail.Core;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.DependencyInjection;
-using System;
+﻿using System;
 using System.Net;
 using System.Net.Mail;
 using System.Text;
-using System.Threading.Tasks;
-using System.Web.Mvc;
 
-namespace DiscountMailer
+namespace Email
 {
     public class EmailSender
     {
