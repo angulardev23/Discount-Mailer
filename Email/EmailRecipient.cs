@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CsvHelper.Configuration;
+using System;
 
 namespace Email
 {
@@ -17,4 +18,20 @@ namespace Email
             EndDateTime = endDateTime;
         }
     }
+
+
+    public sealed class EmailRecipientMap : ClassMap<EmailRecipient>
+    {
+        public EmailRecipientMap()
+        {
+            AutoMap();
+
+            //Map(m => m.EmailAddress);
+            //Map(m => m.Name);
+            //Map(m => m.Surname);
+            //Map(m => m.EndDateTime);
+
+        }
+    }
+
 }
