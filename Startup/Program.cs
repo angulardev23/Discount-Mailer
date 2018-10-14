@@ -3,6 +3,7 @@ using Email;
 using Email;
 using Startup;
 using System;
+using System.Collections.Generic;
 
 namespace Email
 {
@@ -12,7 +13,7 @@ namespace Email
         {   //read and create settings file
             Settings settings = new Settings();
             //read CSV file
-            CSVUserReader.ReadCSV(settings.CSVFile);
+            IEnumerable<EmailRecipient> emailRecipientsIEnumerable = CSVUserReader.ReadCSV(settings.CSVFile);       
             //create body
             EmailRecipient recipient = new EmailRecipient("klocu321@interia.pl", "Marcin", "Kloc", DateTime.Today);
             string Email = recipient.EmailAddress;
