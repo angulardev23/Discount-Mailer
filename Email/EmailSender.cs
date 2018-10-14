@@ -26,6 +26,7 @@ namespace Email
             }
             catch (Exception ex)
             {
+                Console.WriteLine($"Exception in send e-mail {ex}");
                 return false;
             }
         }
