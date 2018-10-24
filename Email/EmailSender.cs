@@ -31,7 +31,7 @@ namespace Email
             }
         }
 
-        public void isItSended()
+        public void isEmailSent()
         {
             bool result = false;
 
@@ -39,7 +39,7 @@ namespace Email
             Console.WriteLine(result);
         }
 
-        public void isItSended(string toEmail, string subject, string body)
+        public void isEmailSent(string toEmail, string subject, string body)
         {
             bool result = false;
 
@@ -56,7 +56,7 @@ namespace Email
         string Body = makeBody.text(recipient.Name, recipient.Surname, recipient.EndDateTime);
         //send an email
         EmailSender emailSender = new EmailSender();
-        emailSender.isItSended(recipient.EmailAddress, "Promocja", Body);
+        emailSender.isEmailSent(recipient.EmailAddress, "Promocja", Body);
         }
 
 
