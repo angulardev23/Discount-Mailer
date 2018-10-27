@@ -11,19 +11,13 @@ namespace CSV
     {
         public static IEnumerable<EmailRecipient> ReadCSV(String FilePath)
         {
-            TextReader textReader = File.OpenText(FilePath);
-            //var csv = new CsvReader(textReader);
-            IEnumerable<EmailRecipient> allValues;
-
             using (TextReader fileReader = File.OpenText(FilePath))
             {
                 var csv = new CsvReader(fileReader);
                 csv.Configuration.HasHeaderRecord = false;
-                allValues = csv.GetRecords<EmailRecipient>().ToArray();
+                return csv.GetRecords<EmailRecipient>().ToArray();
             }
             
-
-            return allValues;
         }
 
 
