@@ -53,7 +53,7 @@ namespace Email
         EmailRecipient recipient = new EmailRecipient("klocu321@interia.pl", "Marcin", "Kloc", DateTime.Today);
         //body builder
         BodyBuilder makeBody = new BodyBuilder();
-        string Body = makeBody.text(recipient.Name, recipient.Surname, recipient.EndDateTime);
+        string Body = makeBody.getBodyString(recipient.Name, recipient.Surname, recipient.EndDateTime);
         //send an email
         EmailSender emailSender = new EmailSender();
         emailSender.isEmailSent(recipient.EmailAddress, "Promocja", Body);

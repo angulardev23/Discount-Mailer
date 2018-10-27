@@ -25,12 +25,6 @@ namespace Email
         public EmailRecipientMap()
         {
             AutoMap();
-
-            //Map(m => m.EmailAddress);
-            //Map(m => m.Name);
-            //Map(m => m.Surname);
-            //Map(m => m.EndDateTime);
-
         }
     }
 
