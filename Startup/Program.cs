@@ -14,9 +14,8 @@ namespace Email
             Settings settings = new Settings();
             //read CSV file
             IEnumerable<EmailRecipient> emailRecipientsIEnumerable = CSVUserReader.ReadCSV(settings.CSVFile);       
-           
             var send = new EmailSender
-            .sending();
+            .sending(emailRecipientsIEnumerable);
         }
     }
 }
