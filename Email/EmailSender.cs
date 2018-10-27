@@ -7,7 +7,7 @@ namespace Email
 {
     public class EmailSender
     {
-        public bool SendEmail(string toEmail, string subject, string body)
+        public bool SendOptions(string toEmail, string subject, string body)
         {
             try
             {
@@ -26,24 +26,37 @@ namespace Email
             }
             catch (Exception ex)
             {
+                Console.WriteLine($"Exception in send e-mail {ex}");
                 return false;
             }
         }
 
-        public void isItSended()
+        public void isEmailSent()
         {
             bool result = false;
 
-            result = SendEmail("klocu321@interia.pl", "Powitanie", "Czesc sprawdzam poprawnosc wysylania eMaili");
+            result = SendOptions("klocu321@interia.pl", "Powitanie", "Czesc sprawdzam poprawnosc wysylania eMaili");
             Console.WriteLine(result);
         }
 
-        public void isItSended(string toEmail, string subject, string body)
+        public void isEmailSent(string toEmail, string subject, string body)
         {
             bool result = false;
 
-            result = SendEmail(toEmail, subject, body);
+            result = SendOptions(toEmail, subject, body);
             Console.WriteLine(result);
+        }
+
+        public void sending()
+        {
+        //email data
+        EmailRecipient recipient = new EmailRecipient("klocu321@interia.pl", "Marcin", "Kloc", DateTime.Today);
+        //body builder
+        BodyBuilder makeBody = new BodyBuilder();
+        string Body = makeBody.text(recipient.Name, recipient.Surname, recipient.EndDateTime);
+        //send an email
+        EmailSender emailSender = new EmailSender();
+        emailSender.isEmailSent(recipient.EmailAddress, "Promocja", Body);
         }
 
 
