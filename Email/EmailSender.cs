@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Email
 {
-    public class EmailSender
+    public class EmailSender : EmailRecipient
     {
         public bool SendOptions(string toEmail, string subject, string body)
         {
@@ -47,7 +47,7 @@ namespace Email
             Console.WriteLine(result);
         }
 
-        public void sending(IEnumerable EmailRecipient)
+        public void sending(ICollection<EmailRecipient> EmailRecipient)
         {
             string EmailAddress;
             string Name;
@@ -62,7 +62,7 @@ namespace Email
                         EmailAddress = EmailRecipient.EmailAdress;
                         Name = EmailRecipient.Name;
                         Surname = EmailRecipient.Surname;
-                        EndDateTime = EmailRecipient.DateTime;
+                        EndDateTime = EmailRecipient.DateTime; // -> tu mają być var i niżej też
 
                         //email data
                         EmailRecipient recipient = new EmailRecipient(EmailAddress, Name, Surname, EndDateTime);
