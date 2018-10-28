@@ -49,7 +49,7 @@ namespace Email
 
         public void sending(ICollection<EmailRecipient> EmailRecipient)
         {
-            string EmailAddress;
+            string EmailAddress; // -> zmienne z małych liter
             string Name;
             string Surname;
             DateTime EndDateTime;

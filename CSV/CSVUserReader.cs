@@ -11,7 +11,7 @@ namespace CSV
     {
         public static IEnumerable<EmailRecipient> ReadCSV(string filePath) // -> tu ma być ICollection
         {
-            // -> tu mówił o File.
+            // -> tu mówił o File. 
             using (TextReader fileReader = File.OpenText(filePath))
             {
                 var csv = new CsvReader(fileReader);
