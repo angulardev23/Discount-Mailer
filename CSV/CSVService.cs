@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace CSV
 {
-    public class CSVUserReader
+    public class CSVService
     {
         public static IEnumerable<EmailRecipient> ReadCSV(string filePath) // -> tu ma być ICollection
         {

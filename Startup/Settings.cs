@@ -20,7 +20,6 @@ namespace Startup
             var builder = new ConfigurationBuilder()
                             .SetBasePath(Directory.GetCurrentDirectory())
                             .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
-            var gar = builder.Build();
             var dir = Directory.GetCurrentDirectory();
             Configuration = builder.Build();
 
@@ -28,5 +27,5 @@ namespace Startup
             CSVFile = Configuration["ApplicationSettings:CSVfile"];
         }
 
-    }
+    }   
 }

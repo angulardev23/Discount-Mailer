@@ -13,7 +13,7 @@ namespace Email
         {   //read and create settings file
             var settings = new Settings();
             //read CSV file
-            var emailRecipientsIEnumerable = CSVUserReader.ReadCSV(settings.CSVFile);  
+            var emailRecipientsIEnumerable = CSVService.ReadCSV(settings.CSVFile);  
             
             var send = new EmailSender
             .sending(emailRecipientsIEnumerable);
