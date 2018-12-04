@@ -7,9 +7,14 @@ using System.Linq;
 
 namespace CSV
 {
-    public class CSVService
+    public class CSVService : ICSVService
     {
-        public static IEnumerable<EmailRecipient> ReadCSV(string filePath) // -> tu ma być ICollection
+        public CSVService()
+        {
+
+        }
+
+        public IEnumerable<EmailRecipient> ReadCSV(string filePath) // -> tu ma być ICollection
         {
             // -> tu mówił o File. 
             using (TextReader fileReader = File.OpenText(filePath))
