@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Startup", "Startup\Startup.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSV", "CSV\CSV.csproj", "{AD339F12-EAEB-4399-A107-1DE76118D6DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobScheduler", "JobScheduler\JobScheduler.csproj", "{E1388189-F952-4275-BF4A-1FB818B471F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Job", "JobScheduler\Job.csproj", "{E1388189-F952-4275-BF4A-1FB818B471F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

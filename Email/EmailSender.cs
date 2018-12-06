@@ -6,6 +6,7 @@ using System.Text;
 
 namespace Email
 {
+    //EmailSender nie ma dziedziczyc po EmailRecipient tylko używać obiektu EmailRecipient w środku
     public class EmailSender : EmailRecipient
     {
         public bool SendOptions(string toEmail, string subject, string body)

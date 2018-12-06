@@ -13,7 +13,6 @@ namespace Startup
         {
             var builder = new ContainerBuilder();
             builder.RegisterType<CSVService>().As<ICSVService>();
-
         }
     }
 }
