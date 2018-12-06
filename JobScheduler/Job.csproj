@@ -7,6 +7,8 @@
   <ItemGroup>
     <PackageReference Include="Hangfire.AspNetCore" Version="1.6.21" />
     <PackageReference Include="Hangfire.Core" Version="1.6.21" />
+    <PackageReference Include="Hangfire.Dashboard.Authorization" Version="2.1.0" />
+    <PackageReference Include="Hangfire.MemoryStorage.Core" Version="1.4.0" />
     <PackageReference Include="Hangfire.SqlServer" Version="1.6.21" />
   </ItemGroup>
 

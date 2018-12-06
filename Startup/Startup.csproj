@@ -7,6 +7,8 @@
 
   <ItemGroup>
     <PackageReference Include="Autofac" Version="4.8.1" />
+    <PackageReference Include="Hangfire.Dashboard.Authorization" Version="2.1.0" />
+    <PackageReference Include="Hangfire.MemoryStorage.Core" Version="1.4.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.1.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="2.1.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.1.1" />
@@ -18,6 +20,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CSV\CSV.csproj" />
     <ProjectReference Include="..\Email\Email.csproj" />
+    <ProjectReference Include="..\JobScheduler\Job.csproj" />
   </ItemGroup>
 
 </Project>

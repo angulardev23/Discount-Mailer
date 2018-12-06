@@ -1,4 +1,6 @@
 ﻿using CSV;
+using Hangfire;
+using Hangfire.MemoryStorage;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,9 +15,18 @@ namespace Job
             _cSVService = cSVService;
         }
 
-        public void Run()
+        public static void Run()
         {
-            _cSVService.ReadCSV("file");
+            //GlobalConfiguration.Configuration.UseSqlServerStorage("Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;");
+            GlobalConfiguration.Configuration.UseMemoryStorage();
+
+            using (var server = new BackgroundJobServer())
+            {
+                Console.WriteLine("Hangfire Server started. Press any key to exit...");
+                Console.ReadKey();
+            }
         }
+
+
     }
 }
