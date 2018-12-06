@@ -6,8 +6,7 @@ using System.Text;
 
 namespace Email
 {
-    //EmailSender nie ma dziedziczyc po EmailRecipient tylko używać obiektu EmailRecipient w środku
-    public class EmailSender : EmailRecipient
+    public class EmailSender
     {
         public bool SendOptions(string toEmail, string subject, string body)
         {
@@ -58,7 +57,7 @@ namespace Email
 
             foreach(object listOfSendingInformation in EmailRecipient)
             {
-                if (item == null) continue;
+/*                if (item == null) continue;
                 foreach(EmailRecipient property in EmailRecipient.GetType().GetProperties())
                     {
                         EmailAddress = EmailRecipient.EmailAdress;
@@ -75,7 +74,7 @@ namespace Email
                         EmailSender emailSender = new EmailSender();
                         emailSender.isEmailSent(recipient.EmailAddress, "Promocja", Body);
                     }
-            }
+ */           }
         }
 
     }
