@@ -1,5 +1,6 @@
 ﻿using CsvHelper;
 using Email;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,13 +10,16 @@ namespace CSV
 {
     public class CSVService : ICSVService
     {
-        public CSVService()
+        private IOptions<CsvConfig> _csvConfig;
+        public CSVService(IOptions<CsvConfig> csvConfig)
         {
-
+            _csvConfig = csvConfig;
         }
 
-        public IEnumerable<EmailRecipient> ReadCSV(string filePath) // -> tu ma być ICollection
+        public IEnumerable<EmailRecipient> ReadCSV() // -> tu ma być ICollection
         {
+            var filePath = _csvConfig.Value.CSVFile;
+            Console.WriteLine("Reading CSV...");
             // -> tu mówił o File. 
             using (TextReader fileReader = File.OpenText(filePath))
             {

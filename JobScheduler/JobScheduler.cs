@@ -1,4 +1,5 @@
 ﻿using CSV;
+using Email;
 using Hangfire;
 using Hangfire.MemoryStorage;
 using System;
@@ -15,13 +16,23 @@ namespace Job
             _cSVService = cSVService;
         }
 
-        public static void Run()
+        public void Run()
         {
             //GlobalConfiguration.Configuration.UseSqlServerStorage("Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;");
             GlobalConfiguration.Configuration.UseMemoryStorage();
 
+            var manager = new RecurringJobManager();
+            //manager.AddOrUpdate("some-id", Job.FromExpression(() => _cSVService.ReadCSV()), Cron.Minutely);
+            RecurringJob.AddOrUpdate(() => _cSVService.ReadCSV(), Cron.Minutely);
+            var a = _cSVService.ReadCSV();
+
+            RecurringJob.AddOrUpdate(
+                () => Console.WriteLine("Recurring!"),
+                Cron.Minutely);
+
             using (var server = new BackgroundJobServer())
             {
+                //var emailRecipientsIEnumerable = CSVService.ReadCSV(settings.CSVFile);
                 Console.WriteLine("Hangfire Server started. Press any key to exit...");
                 Console.ReadKey();
             }

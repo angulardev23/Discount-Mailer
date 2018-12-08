@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CSV
+namespace Startup
 {
-    public class CsvConfig
+    class AppConfigurationcs
     {
-        public string CSVFile { get; set; }
     }
 }
