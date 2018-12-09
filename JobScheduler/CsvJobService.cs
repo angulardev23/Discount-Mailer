@@ -8,10 +8,10 @@ using System.Text;
 
 namespace Job
 {
-    public class JobScheduler
+    public class CsvJobService : ICsvJobService
     {
         private ICSVService _cSVService;
-        public JobScheduler(ICSVService cSVService)
+        public CsvJobService(ICSVService cSVService)
         {
             _cSVService = cSVService;
         }
@@ -21,10 +21,7 @@ namespace Job
             //GlobalConfiguration.Configuration.UseSqlServerStorage("Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;");
             GlobalConfiguration.Configuration.UseMemoryStorage();
 
-            var manager = new RecurringJobManager();
-            //manager.AddOrUpdate("some-id", Job.FromExpression(() => _cSVService.ReadCSV()), Cron.Minutely);
             RecurringJob.AddOrUpdate(() => _cSVService.ReadCSV(), Cron.Minutely);
-            var a = _cSVService.ReadCSV();
 
             RecurringJob.AddOrUpdate(
                 () => Console.WriteLine("Recurring!"),

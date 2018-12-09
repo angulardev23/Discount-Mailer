@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using CSV;
+using Job;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -20,6 +21,7 @@ namespace Startup
 
             var builder = new ContainerBuilder();
             builder.RegisterType<CSVService>().As<ICSVService>();
+            builder.RegisterType<CsvJobService>().As<ICsvJobService>();
             builder.Populate(services);
         }
     }

@@ -12,8 +12,6 @@ namespace Startup
 {
     public class Settings
     {
-        public String CSVFile { get; set; }
-
         public IConfigurationRoot Config { get; set; }
 
         public Settings()
