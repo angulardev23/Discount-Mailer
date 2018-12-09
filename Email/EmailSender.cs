@@ -3,11 +3,17 @@ using System.Collections.Generic;
 using System.Net;
 using System.Net.Mail;
 using System.Text;
+using CsvHelper;
+using Email;
+using System.IO;
+using System.Linq;
+using CsvHelper.Configuration;
 
 namespace Email
 {
-    public class EmailSender
+    public class EmailSender : IEmailSender
     {
+
         public bool SendOptions(string toEmail, string subject, string body)
         {
             try
@@ -48,34 +54,34 @@ namespace Email
             Console.WriteLine(result);
         }
 
-        public void sending(ICollection<EmailRecipient> EmailRecipient)
+        public void sending(ICollection<EmailRecipient> emailRecipient)
         {
-            string EmailAddress; // -> zmienne z małych liter
-            string Name;
-            string Surname;
-            DateTime EndDateTime;
 
-            foreach(object listOfSendingInformation in EmailRecipient)
+            foreach(object listOfSendingInformation in emailRecipient)
             {
-/*                if (item == null) continue;
-                foreach(EmailRecipient property in EmailRecipient.GetType().GetProperties())
+                foreach(IEmailSender property in GetType().GetProperties())
                     {
-                        EmailAddress = EmailRecipient.EmailAdress;
-                        Name = EmailRecipient.Name;
-                        Surname = EmailRecipient.Surname;
-                        EndDateTime = EmailRecipient.DateTime; // -> tu mają być var i niżej też
+
+                        var emailAddress = EmailRecipient.emailAddress;
+                        var name = EmailRecipient.name;
+                        var surname = EmailRecipient.surname;
+                        var endDateTime = EmailRecipient.dateTime;
 
                         //email data
-                        EmailRecipient recipient = new EmailRecipient(EmailAddress, Name, Surname, EndDateTime);
+                        EmailRecipient recipient = new EmailRecipient(emailAddress, name, surname, endDateTime);
                         //body builder
                         BodyBuilder makeBody = new BodyBuilder();
-                        string Body = makeBody.getBodyString(recipient.Name, recipient.Surname, recipient.EndDateTime);
+                        string Body = makeBody.getBodyString(recipient.name, recipient.surname, recipient.endDateTime);
                         //send an email
                         EmailSender emailSender = new EmailSender();
-                        emailSender.isEmailSent(recipient.EmailAddress, "Promocja", Body);
+                        emailSender.isEmailSent(recipient.emailAddress, "Promocja", Body);
                     }
- */           }
+            }
         }
 
+        ClassMap<EmailRecipient> IEmailSender.EmailRecipientMap(string EmailAddress, string Name, string Surname, DateTime EndDateTime)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

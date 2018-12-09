@@ -5,17 +5,17 @@ namespace Email
 {
     public class EmailRecipient
     {
-        public string EmailAddress { get; set; }
-        public string Name { get; set; }
-        public string Surname { get; set; }
-        public DateTime EndDateTime { get; set; }
+        public string emailAddress { get; set; }
+        public string name { get; set; }
+        public string surname { get; set; }
+        public DateTime endDateTime { get; set; }
 
         public EmailRecipient(string emailAddress, string name, string surname, DateTime endDateTime)
         {
-            EmailAddress = emailAddress;
-            Name = name;
-            Surname = surname;
-            EndDateTime = endDateTime;
+            this.emailAddress = emailAddress;
+            this.name = name;
+            this.surname = surname;
+            this.endDateTime = endDateTime;
         }
     }
 
