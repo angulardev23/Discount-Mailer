@@ -23,11 +23,11 @@ namespace Job
 
             RecurringJob.AddOrUpdate(() => _cSVService.ReadCSV(), Cron.Minutely);
 
-            RecurringJob.AddOrUpdate(
-                () => Console.WriteLine("Recurring!"),
-                Cron.Minutely);
+            //RecurringJob.AddOrUpdate(
+            //    () => Console.WriteLine("Recurring!"),
+            //    Cron.Minutely);
 
-            using (var server = new BackgroundJobServer())
+            using (new BackgroundJobServer())
             {
                 //var emailRecipientsIEnumerable = CSVService.ReadCSV(settings.CSVFile);
                 Console.WriteLine("Hangfire Server started. Press any key to exit...");

@@ -1,6 +1,8 @@
 ﻿using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using CSV;
+using Hangfire;
+using Hangfire.MemoryStorage;
 using Job;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,7 +14,7 @@ namespace Startup
 {
     public static class ContainerConfig
     {
-        public static void ConfigureContainers(IServiceCollection services)
+        public static IServiceProvider ConfigureContainers(IServiceCollection services)
         {
             var settings = new Settings();
             services.AddOptions();
@@ -23,6 +25,13 @@ namespace Startup
             builder.RegisterType<CSVService>().As<ICSVService>();
             builder.RegisterType<CsvJobService>().As<ICsvJobService>();
             builder.Populate(services);
+
+            var container = builder.Build();
+
+            GlobalConfiguration.Configuration.UseMemoryStorage();
+            GlobalConfiguration.Configuration.UseAutofacActivator(container);
+
+            return new AutofacServiceProvider(container);
         }
     }
 }
