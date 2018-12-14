@@ -10,21 +10,17 @@ using System.Text;
 
 namespace Startup
 {
-    class Settings
+    public class Settings
     {
-        public String CSVFile { get; set; }
-        public IConfiguration Configuration { get; set; }
+        public IConfigurationRoot Config { get; set; }
 
         public Settings()
         {
-            var builder = new ConfigurationBuilder()
+            Config = new ConfigurationBuilder()
                             .SetBasePath(Directory.GetCurrentDirectory())
-                            .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
-            var dir = Directory.GetCurrentDirectory();
-            Configuration = builder.Build();
+                            .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                            .Build();
 
-            var env = Configuration["ApplicationSettings:Environment"];
-            CSVFile = Configuration["ApplicationSettings:CSVfile"];
         }
 
     }   

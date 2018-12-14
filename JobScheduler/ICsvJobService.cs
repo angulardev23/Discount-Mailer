@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CSV
+namespace Job
 {
-    public class CsvConfig
+    public interface ICsvJobService
     {
-        public string CSVFile { get; set; }
+        void Run();
     }
 }

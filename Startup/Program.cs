@@ -1,26 +1,25 @@
-﻿using CSV;
-using Email;
+﻿using Autofac;
+using CSV;
 using Email;
 using Job;
+using Microsoft.Extensions.DependencyInjection;
 using Startup;
 using System;
 using System.Collections.Generic;
 
-namespace Email
+namespace Startup
 {
     class Program
     {
         static void Main(string[] args)
         {   //read and create settings file
-            var settings = new Settings();
-            //read CSV file
-            //var emailRecipientsIEnumerable = CSVService.ReadCSV(settings.CSVFile);  
+            //var settings = new Settings();
+            var services = new ServiceCollection();
+            var serviceProvider = ContainerConfig.ConfigureContainers(services);
 
-            //var send = new EmailSender
-            //.sending(emailRecipientsIEnumerable);
+            var _csvJobService = serviceProvider.GetService<ICsvJobService>();
 
-            JobScheduler.Run();
-
+            _csvJobService.Run();
         }
     }
 }

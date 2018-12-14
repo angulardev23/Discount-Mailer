@@ -7,6 +7,6 @@ namespace CSV
 {
     public interface ICSVService
     {
-        IEnumerable<EmailRecipient> ReadCSV(string filePath); 
+        IEnumerable<EmailRecipient> ReadCSV();
     }
 }
