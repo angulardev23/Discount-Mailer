@@ -10,7 +10,7 @@ namespace Job
 {
     public class CsvJobService : ICsvJobService
     {
-        private ICSVService _cSVService;
+        private readonly ICSVService _cSVService;
         public CsvJobService(ICSVService cSVService)
         {
             _cSVService = cSVService;
@@ -21,8 +21,10 @@ namespace Job
             //GlobalConfiguration.Configuration.UseSqlServerStorage("Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;");
             GlobalConfiguration.Configuration.UseMemoryStorage();
 
-            RecurringJob.AddOrUpdate(() => _cSVService.ReadCSV(), Cron.Minutely);
-
+            //RecurringJob.AddOrUpdate(() => _cSVService.ReadCSV(), Cron.Minutely);
+            //BackgroundJob.Enqueue(() => _cSVService.ReadCSV());
+            RecurringJob.AddOrUpdate<ICSVService>(x => x.ReadCSV(), Cron.Minutely);
+            //_cSVService.ReadCSV();
             //RecurringJob.AddOrUpdate(
             //    () => Console.WriteLine("Recurring!"),
             //    Cron.Minutely);

@@ -10,7 +10,7 @@ namespace CSV
 {
     public class CSVService : ICSVService
     {
-        private IOptions<CsvConfig> _csvConfig;
+        private readonly IOptions<CsvConfig> _csvConfig;
         public CSVService(IOptions<CsvConfig> csvConfig)
         {
             _csvConfig = csvConfig;
