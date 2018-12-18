@@ -16,7 +16,7 @@ namespace CSV
             _csvConfig = csvConfig;
         }
 
-        public IEnumerable<EmailRecipient> ReadCSV() // -> tu ma być ICollection
+        public IEnumerable<EmailRecipient> ReadCSV() // -> change type to ICollection
         {
             var filePath = _csvConfig.Value.CSVFile;
             Console.WriteLine("Reading CSV...");
