@@ -21,12 +21,15 @@ namespace Startup
             services.AddOptions();
             services.Configure<CsvConfig>(p =>
                 settings.Config.GetSection("ApplicationSettings").Bind(p));
+            services.Configure<EmailConfig>(p =>
+                settings.Config.GetSection("ApplicationSettings").GetSection("smtpClient").Bind(p));
 
             var builder = new ContainerBuilder();
             builder.RegisterType<CSVService>().As<ICSVService>();
             builder.RegisterType<CsvEmailService>().As<ICsvEmailService>();
             builder.RegisterType<JobService>().As<IJobService>();
             builder.RegisterType<EmailService>().As<IEmailService>();
+            builder.RegisterType<EmailSender>().As<IEmailSender>();
 
 
             builder.Populate(services);
