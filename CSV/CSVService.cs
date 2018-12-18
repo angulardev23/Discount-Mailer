@@ -19,7 +19,7 @@ namespace CSV
         public IEnumerable<EmailRecipient> ReadCSV() // -> change type to ICollection
         {
             var filePath = _csvConfig.Value.CSVFile;
-            Console.WriteLine("Reading CSV...");
+            Console.WriteLine("Reading CSV file...");
             // -> tu mówił o File. 
             using (TextReader fileReader = File.OpenText(filePath))
             {
