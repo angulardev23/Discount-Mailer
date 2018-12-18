@@ -4,8 +4,8 @@ using System.Text;
 
 namespace Job
 {
-    public interface ICsvJobService
+    public interface IJobService
     {
-        void Run();
+        void RunSendCsvEmails();
     }
 }
