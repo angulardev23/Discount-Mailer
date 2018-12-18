@@ -16,7 +16,7 @@ namespace CSV
             _csvConfig = csvConfig;
         }
 
-        public IEnumerable<EmailRecipient> ReadCSV() // -> change type to ICollection
+        public ICollection<EmailRecipient> ReadCSV() // -> change type to ICollection
         {
             var filePath = _csvConfig.Value.CSVFile;
             Console.WriteLine("Reading CSV file...");
@@ -25,6 +25,7 @@ namespace CSV
             {
                 var csv = new CsvReader(fileReader);
                 csv.Configuration.HasHeaderRecord = false;
+                Console.WriteLine("Reading done.");
                 return csv.GetRecords<EmailRecipient>().ToArray();  // -> 100 records (paging)
             }
             
