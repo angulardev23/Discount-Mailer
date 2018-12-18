@@ -25,7 +25,7 @@ namespace CSV
             {
                 var csv = new CsvReader(fileReader);
                 csv.Configuration.HasHeaderRecord = false;
-                return csv.GetRecords<EmailRecipient>().ToArray();  // -> pobieranie 100 rekordów na minutę
+                return csv.GetRecords<EmailRecipient>().ToArray();  // -> 100 records (paging)
             }
             
         }
