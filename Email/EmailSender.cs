@@ -57,26 +57,26 @@ namespace Email
         public void sending(ICollection<EmailRecipient> emailRecipient)
         {
 
-            foreach(object listOfSendingInformation in emailRecipient)
-            {
-                foreach(IEmailSender property in GetType().GetProperties())
-                    {
+            //foreach(object listOfSendingInformation in emailRecipient)
+            //{
+            //    foreach(IEmailSender property in GetType().GetProperties())
+            //        {
 
-                        var emailAddress = EmailRecipient.emailAddress;
-                        var name = EmailRecipient.name;
-                        var surname = EmailRecipient.surname;
-                        var endDateTime = EmailRecipient.dateTime;
+            //            var emailAddress = EmailRecipient.emailAddress;
+            //            var name = EmailRecipient.name;
+            //            var surname = EmailRecipient.surname;
+            //            var endDateTime = EmailRecipient.dateTime;
 
-                        //email data
-                        EmailRecipient recipient = new EmailRecipient(emailAddress, name, surname, endDateTime);
-                        //body builder
-                        BodyBuilder makeBody = new BodyBuilder();
-                        string Body = makeBody.getBodyString(recipient.name, recipient.surname, recipient.endDateTime);
-                        //send an email
-                        EmailSender emailSender = new EmailSender();
-                        emailSender.isEmailSent(recipient.emailAddress, "Promocja", Body);
-                    }
-            }
+            //            //email data
+            //            EmailRecipient recipient = new EmailRecipient(emailAddress, name, surname, endDateTime);
+            //            //body builder
+            //            BodyBuilder makeBody = new BodyBuilder();
+            //            string Body = makeBody.getBodyString(recipient.name, recipient.surname, recipient.endDateTime);
+            //            //send an email
+            //            EmailSender emailSender = new EmailSender();
+            //            emailSender.isEmailSent(recipient.emailAddress, "Promocja", Body);
+            //        }
+            //}
         }
 
         ClassMap<EmailRecipient> IEmailSender.EmailRecipientMap(string EmailAddress, string Name, string Surname, DateTime EndDateTime)
