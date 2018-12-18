@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using CSV;
+using Email;
 using Hangfire;
 using Hangfire.MemoryStorage;
 using Job;
@@ -23,7 +24,11 @@ namespace Startup
 
             var builder = new ContainerBuilder();
             builder.RegisterType<CSVService>().As<ICSVService>();
-            builder.RegisterType<CsvJobService>().As<ICsvJobService>();
+            builder.RegisterType<CsvEmailService>().As<ICsvEmailService>();
+            builder.RegisterType<JobService>().As<IJobService>();
+            builder.RegisterType<EmailService>().As<IEmailService>();
+
+
             builder.Populate(services);
 
             var container = builder.Build();

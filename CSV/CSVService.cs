@@ -21,11 +21,11 @@ namespace CSV
             var filePath = _csvConfig.Value.CSVFile;
             Console.WriteLine("Reading CSV file...");
             // -> tu mówił o File. 
-            using (TextReader fileReader = File.OpenText(filePath))
+            using (var fileReader = File.OpenText(filePath))
             {
                 var csv = new CsvReader(fileReader);
                 csv.Configuration.HasHeaderRecord = false;
-                Console.WriteLine("Reading done.");
+                Console.WriteLine("Reading CSV file done.");
                 return csv.GetRecords<EmailRecipient>().ToArray();  // -> 100 records (paging)
             }
             

@@ -16,9 +16,9 @@ namespace Startup
             var services = new ServiceCollection();
             var serviceProvider = ContainerConfig.ConfigureContainers(services);
 
-            var _csvJobService = serviceProvider.GetService<ICsvJobService>();
+            var _jobService = serviceProvider.GetService<IJobService>();
 
-            _csvJobService.Run();
+            _jobService.RunSendCsvEmails();
         }
     }
 }

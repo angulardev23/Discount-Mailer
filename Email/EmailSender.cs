@@ -11,15 +11,15 @@ using CsvHelper.Configuration;
 
 namespace Email
 {
-    public class EmailSender : IEmailSender
+    public static class EmailSender
     {
 
-        public bool SendOptions(string toEmail, string subject, string body)
+        public static bool SendEmail(string toEmail, string subject, string body)
         {
             try
             {
-                string senderEmail = "randomowymvcemail@gmail.com";
-                string senderPassword = "randomoweHaslo";
+                string senderEmail = "mailernetservice@gmail.com";
+                string senderPassword = "netmailer123";
                 SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
                 client.EnableSsl = true;
                 client.DeliveryMethod = SmtpDeliveryMethod.Network;
@@ -38,50 +38,5 @@ namespace Email
             }
         }
 
-        public void isEmailSent()
-        {
-            bool result = false;
-
-            result = SendOptions("klocu321@interia.pl", "Powitanie", "Czesc sprawdzam poprawnosc wysylania eMaili");
-            Console.WriteLine(result);
-        }
-
-        public void isEmailSent(string toEmail, string subject, string body)
-        {
-            bool result = false;
-
-            result = SendOptions(toEmail, subject, body);
-            Console.WriteLine(result);
-        }
-
-        public void sending(ICollection<EmailRecipient> emailRecipient)
-        {
-
-            //foreach(object listOfSendingInformation in emailRecipient)
-            //{
-            //    foreach(IEmailSender property in GetType().GetProperties())
-            //        {
-
-            //            var emailAddress = EmailRecipient.emailAddress;
-            //            var name = EmailRecipient.name;
-            //            var surname = EmailRecipient.surname;
-            //            var endDateTime = EmailRecipient.dateTime;
-
-            //            //email data
-            //            EmailRecipient recipient = new EmailRecipient(emailAddress, name, surname, endDateTime);
-            //            //body builder
-            //            BodyBuilder makeBody = new BodyBuilder();
-            //            string Body = makeBody.getBodyString(recipient.name, recipient.surname, recipient.endDateTime);
-            //            //send an email
-            //            EmailSender emailSender = new EmailSender();
-            //            emailSender.isEmailSent(recipient.emailAddress, "Promocja", Body);
-            //        }
-            //}
-        }
-
-        ClassMap<EmailRecipient> IEmailSender.EmailRecipientMap(string EmailAddress, string Name, string Surname, DateTime EndDateTime)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
