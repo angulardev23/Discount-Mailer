@@ -18,17 +18,25 @@ namespace CSV
 
         public ICollection<EmailRecipient> ReadCSV() // -> change type to ICollection
         {
-            var filePath = _csvConfig.Value.CSVFile;
-            Console.WriteLine("Reading CSV file...");
-            // -> tu mówił o File. 
-            using (var fileReader = File.OpenText(filePath))
+            try
             {
-                var csv = new CsvReader(fileReader);
-                csv.Configuration.HasHeaderRecord = false;
-                Console.WriteLine("Reading CSV file done.");
-                return csv.GetRecords<EmailRecipient>().ToArray();  // -> 100 records (paging)
+                var filePath = _csvConfig.Value.CSVFile;
+                // -> tu mówił o File. 
+                using (var fileReader = File.OpenText(filePath))
+                {
+                    Console.WriteLine("Reading CSV file...");
+                    var csv = new CsvReader(fileReader);
+                    csv.Configuration.HasHeaderRecord = false;
+                    Console.WriteLine("Reading CSV file done.");
+                    return csv.GetRecords<EmailRecipient>().ToArray();  // -> 100 records (paging)
+                }
             }
-            
+            catch (Exception e)
+            {
+                Console.WriteLine($"Could not read CSV file. {e}");
+                throw;
+            }
+
         }
 
 
