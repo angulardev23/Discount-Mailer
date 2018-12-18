@@ -21,13 +21,13 @@ namespace Job
             //GlobalConfiguration.Configuration.UseSqlServerStorage("Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;");
             GlobalConfiguration.Configuration.UseMemoryStorage();
 
-            //RecurringJob.AddOrUpdate(() => _cSVService.ReadCSV(), Cron.Minutely);
-            //BackgroundJob.Enqueue(() => _cSVService.ReadCSV());
-            RecurringJob.AddOrUpdate<ICSVService>(x => x.ReadCSV(), Cron.Minutely);
-            //_cSVService.ReadCSV();
-            //RecurringJob.AddOrUpdate(
-            //    () => Console.WriteLine("Recurring!"),
-            //    Cron.Minutely);
+            RecurringJob.AddOrUpdate<ICSVService>(
+                x => x.ReadCSV(), 
+                Cron.Minutely);
+
+            RecurringJob.AddOrUpdate(
+                () => Console.WriteLine("Second Job!"),
+                Cron.Minutely);
 
             using (new BackgroundJobServer())
             {
