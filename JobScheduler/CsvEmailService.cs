@@ -24,8 +24,13 @@ namespace Job
         {
             Console.WriteLine("Start SendCsvEmails");
 
-            _cSVService.ReadCSV();
-            _emailService.SendCsvEmails();
+            var emailRecipients = _cSVService.ReadCSV();
+            var emailsSentNumber = _emailService.SendCsvEmails(emailRecipients);
+
+            if (emailsSentNumber > 0)
+            {
+                _cSVService.AddCsvIndex(emailsSentNumber);
+            }
         }
 
 

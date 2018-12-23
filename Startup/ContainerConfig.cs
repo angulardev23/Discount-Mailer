@@ -20,7 +20,7 @@ namespace Startup
             var settings = new Settings();
             services.AddOptions();
             services.Configure<CsvConfig>(p =>
-                settings.Config.GetSection("ApplicationSettings").Bind(p));
+                settings.Config.GetSection("ApplicationSettings").GetSection("Csv").Bind(p));
             services.Configure<EmailConfig>(p =>
                 settings.Config.GetSection("ApplicationSettings").GetSection("smtpClient").Bind(p));
 

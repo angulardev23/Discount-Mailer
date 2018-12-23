@@ -2,9 +2,9 @@
 
 namespace Email
 {
-    public class BodyBuilder
+    public static class BodyBuilder
     {
-        public string getBodyString(string name, string surname, DateTime EndDateTime)
+        public static string GetBodyString(string name, string surname, DateTime EndDateTime)
         {
             return $"Szanowny  {name} " + $"{surname} " +
                 $"/n mamy okazję zaprezentować najnowszą promocję trwającą do " +

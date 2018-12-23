@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Email
 {
@@ -11,11 +13,24 @@ namespace Email
         {
             _emailSender = emailSender;
         }
-        public void SendCsvEmails()
+        public int SendCsvEmails(ICollection<EmailRecipient> emailRecipients)
         {
+            int emailsSent = 0;
             Console.WriteLine("Start Sending Csv Emails...");
-            _emailSender.SendEmail("garnoslaw94@gmail.com", "Powitanie", "Czesc sprawdzam poprawnosc wysylania eMaili");
-            Console.WriteLine();
+
+            Parallel.ForEach (emailRecipients, (emailRecipient) =>
+            {
+                if (emailRecipient.endDateTime > DateTime.Now || emailRecipient.endDateTime == null)
+                {
+                    var body = BodyBuilder.GetBodyString(emailRecipient.name, emailRecipient.surname, emailRecipient.endDateTime);
+                    _emailSender.SendEmail(emailRecipient, "Znizka 50% ! ! !", body);
+                    emailsSent++;
+                }
+                Console.WriteLine("Processing {0} on thread {1}", emailRecipient, Thread.CurrentThread.ManagedThreadId);
+            });
+
+            Console.WriteLine("Sending Csv Emails done.");
+            return emailsSent;
         }
     }
 }

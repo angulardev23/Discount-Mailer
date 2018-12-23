@@ -8,5 +8,7 @@ namespace CSV
     public interface ICSVService
     {
         ICollection<EmailRecipient> ReadCSV();
+        void SetCsvIndex(int csvIndex);
+        void AddCsvIndex(int csvIndex);
     }
 }

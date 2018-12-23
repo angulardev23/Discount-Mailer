@@ -6,6 +6,6 @@ namespace Email
 {
     public interface IEmailService
     {
-        void SendCsvEmails();
+        int SendCsvEmails(ICollection<EmailRecipient> emailRecipients);
     }
 }
