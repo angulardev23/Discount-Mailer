@@ -26,7 +26,7 @@ namespace Email
             {
                 var senderEmail = _emailConfig.Value.EmailAddress;
                 var senderPassword = _emailConfig.Value.Password;
-                var client = new SmtpClient(_emailConfig.Value.Host, _emailConfig.Value.Port)
+                var smtpClient = new SmtpClient(_emailConfig.Value.Host, _emailConfig.Value.Port)
                 {
                     EnableSsl = true,
                     DeliveryMethod = SmtpDeliveryMethod.Network,
@@ -38,7 +38,9 @@ namespace Email
                 {
                     BodyEncoding = Encoding.UTF8
                 };
-                client.Send(mailMessage);
+
+                smtpClient.SendMailAsync(mailMessage);
+
                 return true;
             }
             catch (Exception ex)
