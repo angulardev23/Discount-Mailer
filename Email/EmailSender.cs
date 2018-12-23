@@ -36,7 +36,7 @@ namespace Email
 
                 var mailMessage = new MailMessage(senderEmail, emailRecipient.emailAddress, subject, body)
                 {
-                    BodyEncoding = UTF8Encoding.UTF8
+                    BodyEncoding = Encoding.UTF8
                 };
                 client.Send(mailMessage);
                 return true;
