@@ -26,12 +26,13 @@ namespace Email
             {
                 var senderEmail = _emailConfig.Value.EmailAddress;
                 var senderPassword = _emailConfig.Value.Password;
-                var client = new SmtpClient(_emailConfig.Value.Host, _emailConfig.Value.Port);
-
-                client.EnableSsl = true;
-                client.DeliveryMethod = SmtpDeliveryMethod.Network;
-                client.UseDefaultCredentials = false;
-                client.Credentials = new NetworkCredential(senderEmail, senderPassword);
+                var client = new SmtpClient(_emailConfig.Value.Host, _emailConfig.Value.Port)
+                {
+                    EnableSsl = true,
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                    UseDefaultCredentials = false,
+                    Credentials = new NetworkCredential(senderEmail, senderPassword)
+                };
 
                 var mailMessage = new MailMessage(senderEmail, emailRecipient.emailAddress, subject, body)
                 {
