@@ -2,7 +2,6 @@ version: '3.4'
 
 services:
   startup:
-    image: ${DOCKER_REGISTRY-}startup
-    build:
-      context: .
-      dockerfile: Startup\Dockerfile
+    build: .
+    volumes:
+      - ./bin/Release:c:\app

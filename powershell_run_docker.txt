@@ -1,0 +1,14 @@
+buduj serwis
+PS C:\ZTP\mailer repo\Discount-Mailer\Discount-Mailer> docker-compose build [nazwa_serwisu_z_dockerfile]
+
+startuj serwis
+PS C:\ZTP\mailer repo\Discount-Mailer\Discount-Mailer> docker-compose up startup
+
+
+uruchom konsolę w wolumenie
+docker-compose exec 3bb cmd
+
+pokaż działające serwisy
+docker ps
+
+Restart policy - kiedy restartować obraz
