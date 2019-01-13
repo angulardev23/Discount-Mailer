@@ -3,11 +3,14 @@ using Hangfire.MemoryStorage;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 
 namespace Job
 {
     public class JobService : IJobService
     {
+        private static readonly AutoResetEvent autoResetEvent = new AutoResetEvent(false);
+
         private readonly ICsvEmailService _csvEmailJobService;
         public JobService(ICsvEmailService csvEmailJobService)
         {
@@ -23,7 +26,8 @@ namespace Job
             using (var server = new BackgroundJobServer())
             {
                 Console.WriteLine("Hangfire Server started. Press any key to exit...");
-                Console.ReadKey();
+                //Console.ReadKey();
+                autoResetEvent.WaitOne();
             }
         }
     }

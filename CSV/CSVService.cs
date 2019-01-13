@@ -24,8 +24,9 @@ namespace CSV
             try
             {
                 LoadCsvIndex();
-                Console.WriteLine($"Reading CSV file from index {CsvIndex}...");  
-                var csvFilePath = _csvConfig.Value.CSVFile;
+                Console.WriteLine($"Reading CSV file from index {CsvIndex}...");
+                //var csvFilePath = Path.GetFullPath(_csvConfig.Value.CSVFile);// Path.GetFullPath;
+                var csvFilePath = GetCsvFilePath();
                 var pagingSize = _csvConfig.Value.PagingSize;
 
                 using (var fileReader = File.OpenText(csvFilePath))
@@ -103,6 +104,11 @@ namespace CSV
         private string GetCsvIndexPath()
         {
             return Path.Combine(Directory.GetCurrentDirectory(), "CsvIndexFile.txt");
+        }
+
+        private string GetCsvFilePath()
+        {
+            return Path.Combine(Directory.GetCurrentDirectory(), "recipients.csv");
         }
     }
 }

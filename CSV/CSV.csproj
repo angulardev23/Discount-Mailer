@@ -16,4 +16,8 @@
     <ProjectReference Include="..\Email\Email.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="recipients.csv" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
 </Project>
